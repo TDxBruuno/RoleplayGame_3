@@ -1,7 +1,48 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Dwarf: ICharacter
+
+    public class Dwarf : Character
+    {
+        public Dwarf(string name) : base(name)
+        {
+            AddItem(new Axe());
+            AddItem(new Helmet());
+        }
+
+        public override int AttackValue
+        {
+            get
+            {
+                int value = 0;
+                foreach (IItem item in items)
+                {
+                    if (item is IAttackItem attackItem)
+                    {
+                        value += attackItem.AttackValue;
+                    }
+                }
+                return value;
+            }
+        }
+
+        public override int DefenseValue
+        {
+            get
+            {
+                int value = 0;
+                foreach (IItem item in items)
+                {
+                    if (item is IDefenseItem defenseItem)
+                    {
+                        value += defenseItem.DefenseValue;
+                    }
+                }
+                return value;
+            }
+        }
+    }   
+    /* public class Dwarf: ICharacter
     {
         private int health = 100;
 
@@ -83,5 +124,5 @@ namespace RoleplayGame
         {
             this.items.Remove(item);
         }
-    }
+    } */
 }

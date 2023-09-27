@@ -1,7 +1,72 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Wizard: IMagicCharacter
+    public class Wizard : Character, IMagicCharacter
+    {
+        private List<IMagicalItem> magicalItems = new List<IMagicalItem>();
+
+        public Wizard(string name) : base(name)
+        {
+            AddItem(new Staff());
+        }
+
+        public override int AttackValue
+        {
+            get
+            {
+                int value = 0;
+                foreach (IItem item in items)
+                {
+                    if (item is IAttackItem attackItem)
+                    {
+                        value += attackItem.AttackValue;
+                    }
+                }
+                foreach (IMagicalItem item in magicalItems)
+                {
+                    if (item is IMagicalAttackItem magicalAttackItem)
+                    {
+                        value += magicalAttackItem.AttackValue;
+                    }
+                }
+                return value;
+            }
+        }
+
+        public override int DefenseValue
+        {
+            get
+            {
+                int value = 0;
+                foreach (IItem item in items)
+                {
+                    if (item is IDefenseItem defenseItem)
+                    {
+                        value += defenseItem.DefenseValue;
+                    }
+                }
+                foreach (IMagicalItem item in magicalItems)
+                {
+                    if (item is IMagicalDefenseItem magicalDefenseItem)
+                    {
+                        value += magicalDefenseItem.DefenseValue;
+                    }
+                }
+                return value;
+            }
+        }
+
+        public void AddItem(IMagicalItem item)
+        {
+            magicalItems.Add(item);
+        }
+
+        public void RemoveItem(IMagicalItem item)
+        {
+            magicalItems.Remove(item);
+        }
+    }
+    /* public class Wizard: IMagicCharacter
     {
         private int health = 100;
 
@@ -109,5 +174,5 @@ namespace RoleplayGame
             this.magicalItems.Remove(item);
         }
 
-    }
+    } */
 }
