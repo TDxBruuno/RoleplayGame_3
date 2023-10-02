@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Wizard : Character, IMagicCharacter
+    public class Wizard : Character
     {
         private List<IMagicalItem> magicalItems = new List<IMagicalItem>();
 
@@ -15,7 +15,7 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (IItem item in items)
+                foreach (IItem item in magicalItems)
                 {
                     if (item is IAttackItem attackItem)
                     {
@@ -38,7 +38,7 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (IItem item in items)
+                foreach (IItem item in magicalItems)
                 {
                     if (item is IDefenseItem defenseItem)
                     {
