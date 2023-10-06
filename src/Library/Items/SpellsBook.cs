@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class SpellsBook: MagicalAttackItem, MagicalDefenseItem
+    public class SpellsBook: MagicalItem,IMagicalAttackItem,IMagicalDefenseItem
     {
         private List<ISpell> spells = new List<ISpell>();
         
