@@ -4,12 +4,12 @@ namespace RoleplayGame
 {
     public abstract class MagicCharacter
     {
-        private List<IMagicalItem> magicalItems = new List<IMagicalItem>();
-        public void AddItem(IMagicalItem item)
+        private List<MagicalItem> magicalItems = new List<MagicalItem>();
+        public void AddItem(MagicalItem item)
         {
             magicalItems.Add(item);
         }
-        public void RemoveItem(IMagicalItem item)
+        public void RemoveItem(MagicalItem item)
         {
             magicalItems.Remove(item);
         }

@@ -3,7 +3,7 @@ namespace RoleplayGame
 {
     public class Wizard : Character
     {
-        private List<IMagicalItem> magicalItems = new List<IMagicalItem>();
+        private List<MagicalItem> magicalItems = new List<MagicalItem>();
 
         public Wizard(string name) : base(name)
         {
@@ -15,16 +15,16 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (IItem item in magicalItems)
+                foreach (Item item in magicalItems)
                 {
-                    if (item is IAttackItem attackItem)
+                    if (item is AttackItem attackItem)
                     {
                         value += attackItem.AttackValue;
                     }
                 }
-                foreach (IMagicalItem item in magicalItems)
+                foreach (MagicalItem item in magicalItems)
                 {
-                    if (item is IMagicalAttackItem magicalAttackItem)
+                    if (item is MagicalAttackItem magicalAttackItem)
                     {
                         value += magicalAttackItem.AttackValue;
                     }
@@ -38,16 +38,16 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (IItem item in magicalItems)
+                foreach (Item item in magicalItems)
                 {
-                    if (item is IDefenseItem defenseItem)
+                    if (item is DefenseItem defenseItem)
                     {
                         value += defenseItem.DefenseValue;
                     }
                 }
-                foreach (IMagicalItem item in magicalItems)
+                foreach (MagicalItem item in magicalItems)
                 {
-                    if (item is IMagicalDefenseItem magicalDefenseItem)
+                    if (item is MagicalDefenseItem magicalDefenseItem)
                     {
                         value += magicalDefenseItem.DefenseValue;
                     }
@@ -56,12 +56,12 @@ namespace RoleplayGame
             }
         }
 
-        public void AddItem(IMagicalItem item)
+        public void AddItem(MagicalItem item)
         {
             magicalItems.Add(item);
         }
 
-        public void RemoveItem(IMagicalItem item)
+        public void RemoveItem(MagicalItem item)
         {
             magicalItems.Remove(item);
         }
