@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public interface IMagicalItem
+    public abstract class MagicalItem:Item
     {
     }
 }

@@ -1,7 +1,7 @@
 namespace RoleplayGame
 {
-    public interface IDefenseItem: IItem
+    public abstract class DefenseItem:Item
     {
-        int DefenseValue { get; }
+        public abstract int DefenseValue { get; }
     }
 }

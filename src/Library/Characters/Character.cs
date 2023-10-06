@@ -4,8 +4,9 @@ namespace RoleplayGame
 {
     public abstract class Character
     {
-        private int health =  100;
-        private List<IItem> items = new List<IItem>();
+        //private int health =  100;
+        public int Health{ get; private set; } =100;
+        protected List<Item> items = new List<Item>();
         public Character(string name)
         {
             Name = name;
@@ -13,11 +14,11 @@ namespace RoleplayGame
         public string Name{get; set;}
         public abstract int AttackValue{get;}
         public abstract int DefenseValue{get;}
-        public int Health
+        /*public int Health
         {
             get => health;
             private set => health = value < 0 ? 0 : value;
-        }
+        }*/
         public void ReceiveAttack(int power)
         {
             if (DefenseValue < power)
@@ -30,11 +31,11 @@ namespace RoleplayGame
         {
             Health = 100;
         }
-        public void AddItem(IItem item)
+        public void AddItem(Item item)
         {
             items.Add(item);
         }
-        public void RemoveItem(IItem item)
+        public void RemoveItem(Item item)
         {
             items.Remove(item);
         }

@@ -1,7 +1,7 @@
 namespace RoleplayGame
 {
-    public interface IMagicalAttackItem: IMagicalItem
-    {
-        int AttackValue { get; }
+    public abstract class MagicalAttackItem:MagicalItem
+    {   
+        public abstract int AttackValue { get; }
     }
 }
