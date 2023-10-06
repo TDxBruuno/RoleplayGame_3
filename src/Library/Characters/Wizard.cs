@@ -24,7 +24,7 @@ namespace RoleplayGame
                 }
                 foreach (MagicalItem item in magicalItems)
                 {
-                    if (item is MagicalAttackItem magicalAttackItem)
+                    if (item is IMagicalAttackItem magicalAttackItem)
                     {
                         value += magicalAttackItem.AttackValue;
                     }
@@ -47,7 +47,7 @@ namespace RoleplayGame
                 }
                 foreach (MagicalItem item in magicalItems)
                 {
-                    if (item is MagicalDefenseItem magicalDefenseItem)
+                    if (item is IMagicalDefenseItem magicalDefenseItem)
                     {
                         value += magicalDefenseItem.DefenseValue;
                     }
