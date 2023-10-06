@@ -42,6 +42,8 @@ namespace RoleplayGame
             }
         }
     }   
+
+}
     /* public class Dwarf: ICharacter
     {
         private int health = 100;
@@ -125,4 +127,3 @@ namespace RoleplayGame
             this.items.Remove(item);
         }
     } */
-}

@@ -14,7 +14,7 @@ namespace RoleplayGame
             magicalItems.Remove(item);
         }
     }
-    
+}  
     
     /*
     public interface IMagicCharacter: ICharacter
@@ -24,4 +24,4 @@ namespace RoleplayGame
         void RemoveItem(IMagicalItem item);
     }
     */
-}
+

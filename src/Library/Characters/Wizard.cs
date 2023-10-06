@@ -66,6 +66,7 @@ namespace RoleplayGame
             magicalItems.Remove(item);
         }
     }
+}
     /* public class Wizard: IMagicCharacter
     {
         private int health = 100;
@@ -175,4 +176,3 @@ namespace RoleplayGame
         }
 
     } */
-}

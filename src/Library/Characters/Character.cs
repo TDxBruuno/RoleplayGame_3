@@ -38,8 +38,8 @@ namespace RoleplayGame
         {
             items.Remove(item);
         }
-
-
+    }
+}
         /*
         string Name { get; set; }
 
@@ -57,5 +57,4 @@ namespace RoleplayGame
 
         void ReceiveAttack(int power);
         */
-    }
-}
+    

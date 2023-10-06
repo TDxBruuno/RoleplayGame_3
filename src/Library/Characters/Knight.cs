@@ -43,6 +43,7 @@ namespace RoleplayGame
             }
         }
     }
+}
     /* public class Knight : Character
     {
         private int health = 100;
@@ -127,4 +128,3 @@ namespace RoleplayGame
             this.items.Remove(item);
         }
     } */
-}
