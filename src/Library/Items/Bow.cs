@@ -2,7 +2,7 @@ namespace RoleplayGame
 {
     public class Bow: AttackItem
     {
-        public int AttackValue 
+        public override int AttackValue 
         {
             get
             {

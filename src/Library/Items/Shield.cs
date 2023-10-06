@@ -2,7 +2,7 @@ namespace RoleplayGame
 {
     public class Shield: DefenseItem
     {
-        public int DefenseValue
+        public override int DefenseValue
         {
             get
             {
