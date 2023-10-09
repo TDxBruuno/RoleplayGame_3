@@ -1,7 +1,11 @@
 namespace RoleplayGame
 {
-    public abstract class Item
+    public class Item
     {
-        
+        public string Name {get; set;}
+        public Item(string name)
+        {
+            this.Name = name;
+        }
     }
 }

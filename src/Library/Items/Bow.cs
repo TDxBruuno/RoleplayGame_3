@@ -1,13 +1,15 @@
 namespace RoleplayGame
 {
-    public class Bow: AttackItem
+    public class Bow: Item, IAttackItem
     {
-        public override int AttackValue 
+        public int AttackValue = 15;
+        public Bow (string name): base(name)
         {
-            get
-            {
-                return 15;
-            } 
+
+        }
+        public int getAttackValue()
+        {
+            return AttackValue;
         }
     }
 }
